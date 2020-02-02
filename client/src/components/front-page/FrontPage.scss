@@ -1,0 +1,143 @@
+@import '../../sass/vars';
+@import '../../sass/mixins';
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+.front-page {
+    // @include page_height($header-height);
+    min-height: calc(100% - #{$header-height});
+    width: 100%;
+    position: relative;
+}
+
+
+.front-slider {
+    box-sizing: border-box;
+    height: calc(100vh - #{$header-height});
+    width: 100%;
+    position: relative;
+    img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: 500ms;
+    }
+    .arrow-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        margin-left: calc(-15px/2);
+        height: 15px;
+        width: 15px;
+        cursor: pointer;
+        border-radius: 10%;
+        border: solid $summer-color;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+    }
+
+    .arrow-winter {
+        border: solid $winter-color;
+        border-width: 0 3px 3px 0;
+    }
+}
+
+.advantages {
+    height: auto;
+    width: 85%;
+    margin: auto;
+    margin-bottom: 30px;
+    .advgs-why-us {
+        height: 100px;
+        width: 100%;
+        @include font(#{$summer-color});
+        @include flex-center;
+        h2 {
+            margin: 0;
+        }
+    }
+    .advgs-wrap {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .advg-wrap {
+            height: 400px;
+            width: calc(100%/3);
+            @include flex-center;
+            .advg-block {
+                height: 100%;
+                width: 80%;
+                box-sizing: border-box;
+                border-radius: 10px;
+                border: 3px solid #404040;
+                background-color: #262626;
+                .advg-icon {
+                    height: 25%;
+                    width: 100%;
+                    @include flex-center;
+                    img {
+                        height: 70%;
+                    }
+                }
+                .advg-title {
+                    height: 10%;
+                    width: 100%;
+                    @include flex-center;
+                    h3 {
+                        margin: 0;
+                        @include font(#{$summer-color});
+                    }
+                }
+                .advg-text {
+                    height: 65%;
+                    width: 100%;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    p {
+                        text-align: center;
+                        @include font(#{$summer-color});
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .advg-block {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 830px) {
+    .advg-wrap {
+        width: 50% !important;
+        padding: 20px 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .advg-wrap {
+        width: 60% !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .advg-wrap {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 415px) {
+    .advg-wrap {
+        width: 100% !important;
+    }
+}

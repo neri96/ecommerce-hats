@@ -1,0 +1,16 @@
+@import './vars';
+
+@mixin page_height($header) {
+    height: calc(100% - #{$header});
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin font($color) {
+    color: #{$color};
+    font-family: 'Lato', sans-serif;
+}

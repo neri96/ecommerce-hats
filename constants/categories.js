@@ -1,0 +1,1 @@
+module.exports = ['homburg', 'bowler', 'newsboy', 'western', 'baseball', 'fedora', 'beanie', 'watchcap', 'knit', 'ushanka'];

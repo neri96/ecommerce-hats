@@ -1,0 +1,119 @@
+@import '../../../sass/mixins';
+@import '../../../sass/vars';
+
+footer {
+    height: 150px;
+    width: 100%;
+    background-color: #333;
+    position: relative;
+    z-index: 101;
+    box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.63);
+    .upper-footer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        .footer-nav {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px dotted #ccc;
+            .footer-nav-summer, .footer-nav-winter {
+                height: 30%;
+                display: flex;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        flex-grow: 1;
+                        text-align: center;
+                        a {
+                            text-decoration: none;
+                            text-transform: capitalize;
+                            @include font(#{$summer-color});
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-social {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            border-right: 1px dotted #ccc;
+            .footer-links {
+                height: 60%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                a {
+                    height: 100%;
+                    @include flex-center;
+                    img {
+                        height: 60%;
+                    }
+                }
+            }
+        }
+
+        .footer-contacts {
+            height: 100%;
+            width: 20%;
+            .footer-contacts-icons {
+                height: 60%;
+                width: 100%;
+                @include flex-center;
+                flex-direction: column;
+                .contact {
+                    height: 25px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        height: 100%;
+                        padding-right: 7px;
+                    }
+                    span {
+                        @include font(#{$summer-color});
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-nav-title, .footer-follow, .footer-contacts-title {
+    height: 40%;
+    width: 100%;
+    @include flex-center;
+    h3 {
+        @include font(#{$summer-color});
+        margin: 0;
+    }
+}
+
+@media (max-width: 920px) {
+    footer {
+        height: 400px !important;
+    }
+
+    .upper-footer {
+        flex-direction: column;
+    }
+
+    .footer-nav, .footer-social, .footer-contacts {
+        width: 100% !important;
+        border: none;
+        border-bottom: 1px dotted #ccc;
+    }
+
+}

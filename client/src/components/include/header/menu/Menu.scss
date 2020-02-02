@@ -1,0 +1,99 @@
+@import '../../../../sass/vars';
+
+.menu-icon {
+    position: relative;
+    display: none !important;
+}
+
+.menu-small {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    height: 400px;
+    width: 200%;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.63);
+    z-index: 232229 !important;
+}
+
+.left-panel {
+    width: 30%;
+    border-right: 2px solid #ccc;
+}
+
+.season-mini {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms ease-in;
+    cursor: pointer;
+    h2 {
+        text-transform: capitalize;
+        margin: 0;
+    }
+}
+
+.summer-mini {
+    background-color: #4d4d4d;
+}
+
+.right-panel {
+    height: 100%;
+    width: 70%;
+    nav {
+        height: 100%;
+        width: 100%;
+        ul {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            animation-name: nav-appear;
+            animation-duration: 500ms; 
+            animation-timing-function: ease-out;
+            li {
+                list-style-type: none;
+                flex-grow: 1;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: $summer-color;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.nav-winter-smaill {
+    h2, a, li {
+        color: #fff;
+    }
+    .summer-mini {
+        background-color: #333;
+    }
+    .winter-mini {
+        background-color: #4d4d4d;
+    }
+}
+
+@media (max-width: 750px) {
+    .menu-icon {
+        display: flex !important;
+    }
+    .menu-small {
+        display: flex;
+    }
+}
